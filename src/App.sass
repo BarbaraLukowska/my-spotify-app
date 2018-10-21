@@ -1,16 +1,18 @@
 .App
   display: flex
-  justify-content: center
+  align-items: center
+  flex-direction: column
   min-height: 100vh
   background: #282828
 
   button
-    max-height: 3rem
+    height: 3rem
     margin-top: 2rem
     border-radius: 3rem
     background: #1db954
     border: none
     width: 12rem
+    outline: none
 
     a
       text-decoration: none
@@ -18,3 +20,8 @@
       font-weight: 600
       font-size: 14px
       text-transform: uppercase
+
+  &__playlist
+    margin-top: 3rem
+    color: white
+
