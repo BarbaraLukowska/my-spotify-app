@@ -8,24 +8,26 @@ import { getAlbums } from './actions/index';
 class App extends Component {
 
   componentDidMount() {
-    this.props.getAlbums("5yjbUO1Jocui7RKE30zfLT");
+    this.props.getAlbums();
   }
 
   render() {
+    const {albums} = this.props;
     return (
       <div className="App">
         <button>
           <a href='http://localhost:8888' > Login to Spotify </a>
         </button>
-        <PlayList />
+        <PlayList albums={albums}/>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({isFetching, data: {albums}}) => {
   return {
-    albums: state.data.albums || []
+    albums: albums || [],
+    isFetching: isFetching
   }
 }
 

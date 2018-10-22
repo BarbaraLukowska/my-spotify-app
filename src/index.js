@@ -6,7 +6,7 @@ import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './reducers';
-import App from './App';
+import SpotifyApp from './App';
 import * as serviceWorker from './serviceWorker';
 serviceWorker.unregister();
 
@@ -43,7 +43,7 @@ const store = configureStore();
 
 render(
   <Provider store={store}>
-    <App />
+    <SpotifyApp />
   </Provider>,
   document.getElementById('root')
 );

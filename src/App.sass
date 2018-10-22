@@ -3,7 +3,7 @@
   align-items: center
   flex-direction: column
   min-height: 100vh
-  background: #282828
+  background: #181818
 
   button
     height: 3rem
@@ -21,7 +21,29 @@
       font-size: 14px
       text-transform: uppercase
 
-  &__playlist
+  &__album
     margin-top: 3rem
     color: white
+
+    &Card
+      display: flex;
+      border: 1px solid grey;
+      width: 100%;
+      background: #282828
+
+      & ~ &
+        margin-top: 1rem;
+
+    &Image
+      width: 10rem
+      height: 10rem
+      background-size: contain
+
+    &Description
+      color: #fff
+      padding-left: 1rem
+
+      &Name
+        font-size: 20px
+        font-weight: 600
 
