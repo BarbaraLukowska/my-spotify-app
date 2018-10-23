@@ -6,7 +6,7 @@ const Component = ({albums}) => {
     <div className="App__playlist">
       {albums.map( (album) => (
         <div className="App__albumCard" key={album.id}>
-          <div className="App__albumImage" style={{backgroundImage: `url(${album.images[1].url})`}} />
+          <img className="App__albumImage" src={album.images[0].url} alt={album.name} />
           <div className="App__albumDescription">
             <p className="App__albumDescriptionName">{album.name}</p>
             <p>Release date: {album.release_date}</p>
