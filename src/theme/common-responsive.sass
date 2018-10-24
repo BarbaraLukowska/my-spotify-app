@@ -1,0 +1,22 @@
+// small screen / tablet
+$screen-sm-min: 768px
+
+// extra small screen / phone
+$screen-xs-max: $screen-sm-min - 1
+$screen-xs-min: 322px
+
+=screen-range($min, $max)
+  @media only screen and (min-width: $min) and (max-width: $max)
+    @content
+
+=screen-min($min)
+  @media only screen and (min-width: $min)
+    @content
+
+=screen-max($max)
+  @media only screen and (max-width: $max)
+    @content
+
+=screen-xs
+  +screen-max($screen-xs-max)
+    @content

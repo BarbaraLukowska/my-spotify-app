@@ -1,47 +1,69 @@
+@import "theme/common-colors"
+@import "theme/common-responsive"
+
+
 .App
-  display: flex
-  align-items: center
-  flex-direction: column
+  background: $color-background;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-height: 100vh
-  background: #181818
+
+  h1
+    color: $color-white;
+    text-align: center;
 
   button
     height: 3rem
-    margin-top: 2rem
+    margin: 2rem 0
     border-radius: 3rem
-    background: #1db954
+    background: $color-button
     border: none
     width: 12rem
     outline: none
 
     a
-      text-decoration: none
-      color: white
-      font-weight: 600
-      font-size: 14px
-      text-transform: uppercase
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
 
   &__album
-    margin-top: 3rem
-    color: white
+    margin-top: 3rem;
+    color: white;
 
     &Card
-      display: flex;
-      border: 1px solid grey;
-      width: 100%;
-      background: #282828
+      display: flex
+      border: 1px solid $color-border;
+      background: $color-background-card;
+
+      +screen-xs
+        flex-wrap: wrap;
+
+      &:nth-child(even)
+        background: black
+        opacity: .6
 
       & ~ &
         margin-top: 1rem;
 
     &Image
-      width: 10rem
-      height: 10rem
-      background-size: contain
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-right: 1rem;
+      width: 15rem
+      height: 15rem
+
+      +screen-xs
+        margin: 0 auto
 
     &Description
-      color: #fff
-      padding-left: 1rem
+      color: $color-white
+      width: 100%
+      
+      +screen-xs
+        text-align: center
 
       &Name
         font-size: 20px

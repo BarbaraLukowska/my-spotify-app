@@ -1,39 +1,16 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import './App.sass';
-import PlayList from './PlayList';
-import { getAlbums } from './actions/index';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import SpotifyApp from './Main';
+import NotFound from './theme/NotFound';
 
 
-class App extends Component {
+const App = () => (
+  <Router>
+    <Switch>
+      <Route exact path='/' component={SpotifyApp} />
+      <Route path="*" component={NotFound} />
+    </Switch>
+  </Router>
+);
 
-  componentDidMount() {
-    this.props.getAlbums();
-  }
-
-  render() {
-    const {albums} = this.props;
-    return (
-      <div className="App">
-        <button>
-          <a href='http://localhost:8888' > Login to Spotify </a>
-        </button>
-        <PlayList albums={albums}/>
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = ({isFetching, data: {albums}}) => {
-  return {
-    albums: albums || [],
-    isFetching: isFetching
-  }
-}
-
-const SpotifyApp = connect(
-  mapStateToProps,
-  {getAlbums}
-)(App);
-
-export default SpotifyApp;
+export default App;
