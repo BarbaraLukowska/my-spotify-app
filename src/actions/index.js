@@ -2,8 +2,6 @@ import axios from 'axios';
 import { requestSuccess, createRequest, handleError } from './requests';
 import queryString from 'query-string';
 
-//?album_type=album&offset=10&limit=5
-
 const BASE_URL = "https://api.spotify.com/v1"
 
 export function getAlbums() {
@@ -13,7 +11,7 @@ export function getAlbums() {
 
   return (dispatch) => {
     dispatch(createRequest());
-    return axios.get(`${BASE_URL}/artists/${artistId}/albums`, {
+    return axios.get(`${BASE_URL}/artists/${artistId}/albums?album_type=album&limit=5`, {
       headers: {'Authorization': 'Bearer ' + accessToken}
     })
     .then((response) => dispatch(requestSuccess(response.data.items, 'albums')))
