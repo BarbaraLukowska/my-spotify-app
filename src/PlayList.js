@@ -4,7 +4,7 @@ import './App.sass';
 const Component = ({albums}) => {
 
   return (
-    <div className="App__playlist">
+    <div>
       {albums && albums.map( (album) => (
         <div className="App__albumCard" key={album.id}>
           <img className="App__albumImage" src={album.images[0].url} alt={album.name} />

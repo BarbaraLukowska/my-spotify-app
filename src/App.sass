@@ -10,7 +10,9 @@
   min-height: 100vh
 
   h1
-    color: $color-white
+    color: $color-white;
+    text-align: center;
+
   button
     height: 3rem
     margin: 2rem 0
@@ -36,9 +38,8 @@
       border: 1px solid $color-border;
       background: $color-background-card;
 
-      +screen-sm-minus
+      +screen-xs
         flex-wrap: wrap;
-        justify-content: center;
 
       &:nth-child(even)
         background: black
@@ -54,10 +55,14 @@
       width: 15rem
       height: 15rem
 
+      +screen-xs
+        margin: 0 auto
+
     &Description
       color: $color-white
-
-      +screen-sm-minus
+      width: 100%
+      
+      +screen-xs
         text-align: center
 
       &Name
