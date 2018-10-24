@@ -12,11 +12,15 @@ class Main extends Component {
   }
   render() {
     const {albums} = this.props;
+    const artist = albums && albums.map( (album) => album.artists)
+    const name = artist.map( (art) => art[0].name)
+
     return (
       <div className="App">
         <button>
           <a href='http://localhost:8888' > Login to Spotify </a>
         </button>
+        <h1>{name[0]} albums:</h1>
         <PlayList albums={albums}/>
       </div>
     );
