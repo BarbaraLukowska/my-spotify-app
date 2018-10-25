@@ -1,0 +1,21 @@
+@import "./common-colors"
+@import "./mixins"
+@import "../index"
+
+.NotFound
+  background:  $color-background
+  height: 100vh
+  color: $color-white
+  font-weight: 700
+  font-size: 2em
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+
+  button
+    +btn
+
+    a
+      +link
+

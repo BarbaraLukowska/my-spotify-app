@@ -1,59 +1,50 @@
 @import "theme/common-colors"
 @import "theme/common-responsive"
+@import "theme/mixins"
 
-
-.App
-  background: $color-background;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.SpotifyApp
+  background: $color-background
+  display: flex
+  flex-direction: column
+  align-items: center
   min-height: 100vh
 
   h1
-    color: $color-white;
-    text-align: center;
+    color: $color-white
+    text-align: center
+    margin: 2rem 0
 
   button
-    height: 3rem
-    margin: 2rem 0
-    border-radius: 3rem
-    background: $color-button
-    border: none
-    width: 12rem
-    outline: none
+    +btn
 
     a
-      text-decoration: none;
-      color: white;
-      font-weight: 600;
-      font-size: 14px;
-      text-transform: uppercase;
+      +link
 
   &__album
-    margin-top: 3rem;
-    color: white;
+    margin-top: 3rem
+    color: white
 
     &Card
       display: flex
-      border: 1px solid $color-border;
-      background: $color-background-card;
+      border: 1px solid $color-border
+      background: $color-background-card
 
       +screen-xs
-        flex-wrap: wrap;
+        flex-wrap: wrap
 
       &:nth-child(even)
         background: black
         opacity: .6
 
       & ~ &
-        margin-top: 1rem;
+        margin-top: 1rem
 
     &Image
-      background-size: contain;
-      background-repeat: no-repeat;
-      margin-right: 1rem;
-      width: 15rem
-      height: 15rem
+      background-size: contain
+      background-repeat: no-repeat
+      margin-right: 1rem
+      max-width: 15rem
+      max-height: 15rem
 
       +screen-xs
         margin: 0 auto
@@ -61,11 +52,18 @@
     &Description
       color: $color-white
       width: 100%
-      
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      justify-content: center
+      padding: 1rem
+
       +screen-xs
-        text-align: center
+        align-items: center
 
       &Name
         font-size: 20px
         font-weight: 600
-
+      p
+        margin: 0
+        line-height: 26px

@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './NotFound.sass';
 
 const NotFound = () => (
-  <div>
+  <div className="NotFound">
     <p>Page Not Found :(</p>
-    <Link to="/">Return to Home Page</Link>
+    <button>
+      <Link to="/">Return to App</Link>
+    </button>
   </div>
 );
 

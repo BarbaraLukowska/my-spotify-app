@@ -1,13 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom'
 import './index.sass';
-import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './reducers';
-import SpotifyApp from './App';
+import Root from './Root';
 import * as serviceWorker from './serviceWorker';
+
 serviceWorker.unregister();
 
 const initialState = {
@@ -41,9 +41,4 @@ const configureStore = () => {
 
 const store = configureStore();
 
-render(
-  <Provider store={store}>
-    <SpotifyApp />
-  </Provider>,
-  document.getElementById('root')
-);
+render(<Root store={store}/>, document.getElementById('root'));
